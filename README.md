@@ -2,7 +2,7 @@
 `VSCarouselView` is a simple horizontal carousel implemented using UICollectionView. It has been implemented on Swift 3.0
 
 ## Demo
-![alt tag](https://i.imgur.com/kTs9sBh.gif)
+![alt tag](http://i.imgur.com/utvBuCi.gif)
 
 Run the project to check it out.
 
