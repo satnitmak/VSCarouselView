@@ -10,3 +10,26 @@ Run the project to check it out.
 Copy the files from Lib folder into your project before using.
 
 To understand how to use VSCarouselView please refer to ViewController.swift
+
+## Usage
+Initialize View
+```
+carouselView = Bundle.main.loadNibNamed("VSCarouselView", owner: self, options: nil)?.first as? VSCarouselView
+```
+
+Add carousel to your view and give a frame as per your requirement
+```
+carouselView.frame = CGRect(x: 0, y: 100, width: view.frame.size.width, height: 400)
+view.addSubview(carouselView)
+```
+Register carousel with collection view cell nibs and finally call render method
+```
+let cellTuple = [(UINib(nibName: ProductImageAdCollectionCell.nibName, bundle: nil), ProductImageAdCollectionCell.reuseID)]
+carouselView.renderView(withDelegate: self, cellTuple: cellTuple)
+```
+Implement CarouselDelegate Protocol methods
+```
+func clickAction(atIndexPath indexPath: IndexPath) // optional
+func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+```
